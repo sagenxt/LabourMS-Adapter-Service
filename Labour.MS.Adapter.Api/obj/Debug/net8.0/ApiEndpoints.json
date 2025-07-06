@@ -1,0 +1,188 @@
+[
+  {
+    "ContainingType": "Labour.MS.Adapter.Api.Controllers.Establishment.EstablishmentController",
+    "Method": "PersistEstablishmentDetails",
+    "RelativePath": "labourms/v1/services/adapter/establishment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "establishmentRequest",
+        "Type": "Labour.MS.Adapter.Models.DTOs.Request.Establishment.EstablishmentDetailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Core.ApiResponse.Interface.IApiResponse\u00601[[Labour.MS.Adapter.Models.DTOs.Response.Establishment.EstablishmentResponse, Labour.MS.Adapter.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 503
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 499
+      }
+    ]
+  },
+  {
+    "ContainingType": "Labour.MS.Adapter.Api.Controllers.Establishment.EstablishmentController",
+    "Method": "RetrieveAllEstablishmentDetails",
+    "RelativePath": "labourms/v1/services/adapter/establishment/alldetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Core.ApiResponse.Interface.IApiResponse\u00601[[Labour.MS.Adapter.Models.DTOs.Response.Establishment.EstablishmentDetailsResponse, Labour.MS.Adapter.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 503
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 499
+      }
+    ]
+  },
+  {
+    "ContainingType": "Labour.MS.Adapter.Api.Controllers.Establishment.EstablishmentController",
+    "Method": "RetrieveEstablishmentDetails",
+    "RelativePath": "labourms/v1/services/adapter/establishment/details",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Labour.MS.Adapter.Models.DTOs.Request.Establishment.EstablishmentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Core.ApiResponse.Interface.IApiResponse\u00601[[Labour.MS.Adapter.Models.DTOs.Response.Establishment.EstablishmentDetailsResponse, Labour.MS.Adapter.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 503
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 499
+      }
+    ]
+  }
+]
