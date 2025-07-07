@@ -17,3 +17,23 @@ D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.S
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Service\obj\Debug\net8.0\refint\Labour.MS.Adapter.Service.dll
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.pdb
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Service\obj\Debug\net8.0\ref\Labour.MS.Adapter.Service.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Service.deps.json
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Service.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Service.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Models.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Repository.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Utility.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Models.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Repository.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\bin\Debug\net8.0\Labour.MS.Adapter.Utility.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.csproj.AssemblyReference.cache
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.AssemblyInfoInputs.cache
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.AssemblyInfo.cs
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.csproj.CoreCompileInputs.cache
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.sourcelink.json
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.M.AB1B159E.Up2Date
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\refint\Labour.MS.Adapter.Service.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\Labour.MS.Adapter.Service.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Service\obj\Debug\net8.0\ref\Labour.MS.Adapter.Service.dll

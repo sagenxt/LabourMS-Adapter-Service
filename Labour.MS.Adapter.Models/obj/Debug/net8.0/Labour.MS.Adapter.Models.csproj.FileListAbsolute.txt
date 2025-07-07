@@ -9,3 +9,15 @@ D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.M
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Models\obj\Debug\net8.0\refint\Labour.MS.Adapter.Models.dll
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.pdb
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Models\obj\Debug\net8.0\ref\Labour.MS.Adapter.Models.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\bin\Debug\net8.0\Labour.MS.Adapter.Models.deps.json
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\bin\Debug\net8.0\Labour.MS.Adapter.Models.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\bin\Debug\net8.0\Labour.MS.Adapter.Models.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.AssemblyInfoInputs.cache
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.AssemblyInfo.cs
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.csproj.CoreCompileInputs.cache
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.sourcelink.json
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\refint\Labour.MS.Adapter.Models.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\Labour.MS.Adapter.Models.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Models\obj\Debug\net8.0\ref\Labour.MS.Adapter.Models.dll

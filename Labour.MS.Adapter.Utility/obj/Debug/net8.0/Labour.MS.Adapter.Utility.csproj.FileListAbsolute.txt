@@ -9,3 +9,15 @@ D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.U
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Utility\obj\Debug\net8.0\refint\Labour.MS.Adapter.Utility.dll
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.pdb
 D:\Dot Net 8 Projects\APGovernmentProjects\Labour.MS.Adapter\Labour.MS.Adapter.Utility\obj\Debug\net8.0\ref\Labour.MS.Adapter.Utility.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\bin\Debug\net8.0\Labour.MS.Adapter.Utility.deps.json
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\bin\Debug\net8.0\Labour.MS.Adapter.Utility.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\bin\Debug\net8.0\Labour.MS.Adapter.Utility.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.AssemblyInfoInputs.cache
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.AssemblyInfo.cs
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.csproj.CoreCompileInputs.cache
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.sourcelink.json
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\refint\Labour.MS.Adapter.Utility.dll
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\Labour.MS.Adapter.Utility.pdb
+C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Utility\obj\Debug\net8.0\ref\Labour.MS.Adapter.Utility.dll

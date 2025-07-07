@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "establishmentRequest",
-        "Type": "Labour.MS.Adapter.Models.DTOs.Request.Establishment.EstablishmentDetailRequest",
+        "Type": "Labour.MS.Adapter.Models.DTOs.Request.Establishment.EstablishmentDetailsRequest",
         "IsRequired": true
       }
     ],

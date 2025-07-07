@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj": {}
+    "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj": {}
   },
   "projects": {
-    "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj": {
+    "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj",
+        "projectUniqueName": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj",
         "projectName": "Labour.MS.Adapter.Api",
-        "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj",
-        "packagesPath": "C:\\Users\\Noureen\\.nuget\\packages\\",
-        "outputPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Api\\obj\\",
+        "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Api\\Labour.MS.Adapter.Api.csproj",
+        "packagesPath": "C:\\Users\\hassan\\.nuget\\packages\\",
+        "outputPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Noureen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,19 +25,19 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Packages": {},
+          "C:\\Hassan\\LabourRepo\\DotNet-Core-Custom-Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj": {
-                "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj"
+              "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj": {
+                "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj"
               },
-              "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
-                "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj"
+              "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
+                "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj"
               }
             }
           }
@@ -52,7 +52,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -94,24 +94,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj": {
+    "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj",
+        "projectUniqueName": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj",
         "projectName": "Labour.MS.Adapter.Models",
-        "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj",
-        "packagesPath": "C:\\Users\\Noureen\\.nuget\\packages\\",
-        "outputPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\obj\\",
+        "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj",
+        "packagesPath": "C:\\Users\\hassan\\.nuget\\packages\\",
+        "outputPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Noureen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -119,8 +119,8 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Packages": {},
+          "C:\\Hassan\\LabourRepo\\DotNet-Core-Custom-Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -139,7 +139,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -160,24 +160,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj": {
+    "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj",
+        "projectUniqueName": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj",
         "projectName": "Labour.MS.Adapter.Repository",
-        "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj",
-        "packagesPath": "C:\\Users\\Noureen\\.nuget\\packages\\",
-        "outputPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Repository\\obj\\",
+        "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj",
+        "packagesPath": "C:\\Users\\hassan\\.nuget\\packages\\",
+        "outputPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Noureen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -185,19 +185,19 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Packages": {},
+          "C:\\Hassan\\LabourRepo\\DotNet-Core-Custom-Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj": {
-                "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj"
+              "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj": {
+                "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj"
               },
-              "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
-                "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj"
+              "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
+                "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj"
               }
             }
           }
@@ -212,7 +212,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -243,24 +243,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj": {
+    "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj",
+        "projectUniqueName": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj",
         "projectName": "Labour.MS.Adapter.Service",
-        "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj",
-        "packagesPath": "C:\\Users\\Noureen\\.nuget\\packages\\",
-        "outputPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Service\\obj\\",
+        "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Service\\Labour.MS.Adapter.Service.csproj",
+        "packagesPath": "C:\\Users\\hassan\\.nuget\\packages\\",
+        "outputPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Noureen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -268,22 +268,22 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Packages": {},
+          "C:\\Hassan\\LabourRepo\\DotNet-Core-Custom-Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj": {
-                "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj"
+              "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj": {
+                "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Models\\Labour.MS.Adapter.Models.csproj"
               },
-              "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj": {
-                "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj"
+              "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj": {
+                "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Repository\\Labour.MS.Adapter.Repository.csproj"
               },
-              "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
-                "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj"
+              "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
+                "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj"
               }
             }
           }
@@ -298,7 +298,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -337,24 +337,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
+    "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj",
+        "projectUniqueName": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj",
         "projectName": "Labour.MS.Adapter.Utility",
-        "projectPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj",
-        "packagesPath": "C:\\Users\\Noureen\\.nuget\\packages\\",
-        "outputPath": "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Labour.MS.Adapter\\Labour.MS.Adapter.Utility\\obj\\",
+        "projectPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\Labour.MS.Adapter.Utility.csproj",
+        "packagesPath": "C:\\Users\\hassan\\.nuget\\packages\\",
+        "outputPath": "C:\\Hassan\\LabourRepo\\LabourMS-Adapter-Service\\Labour.MS.Adapter.Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Noureen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -362,8 +362,8 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "D:\\Dot Net 8 Projects\\APGovernmentProjects\\Packages": {},
+          "C:\\Hassan\\LabourRepo\\DotNet-Core-Custom-Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -382,7 +382,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -403,7 +403,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

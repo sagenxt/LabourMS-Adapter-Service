@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Labour.MS.Adapter.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee26da21c4639925e0b51d87bede2543f84e9e0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Labour.MS.Adapter.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Labour.MS.Adapter.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
