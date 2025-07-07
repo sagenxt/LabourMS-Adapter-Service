@@ -221,7 +221,6 @@ C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\ne
 C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\net8.0\Labour.M.55C39588.Up2Date
 C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\net8.0\Labour.MS.Adapter.Api.dll
 C:\Hassan\LabourRepo\LabourMS-Adapter-Service\Labour.MS.Adapter.Api\obj\Debug\net8.0\refint\Labour.MS.Adapter.Api.dll
