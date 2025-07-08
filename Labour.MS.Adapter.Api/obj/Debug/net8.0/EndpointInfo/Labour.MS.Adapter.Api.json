@@ -1,14 +1,14 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "Labour.MS.Adapter.Api",
-    "version": "1.0"
+    "title": "Villages-Areas API",
+    "version": "v1"
   },
   "paths": {
-    "/labourms/v1/services/adapter/establishment/alldetails": {
+    "/labourms/v1/services/adapter/villagesareas/details": {
       "get": {
         "tags": [
-          "Establishment"
+          "VillagesAreas"
         ],
         "responses": {
           "200": {
@@ -16,7 +16,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EstablishmentDetailsResponseIApiResponse"
+                  "$ref": "#/components/schemas/VillageAreaResponseIApiResponse"
                 }
               }
             }
@@ -77,37 +77,27 @@
         }
       }
     },
-    "/labourms/v1/services/adapter/establishment": {
+    "/labourms/v1/services/adapter/villagesareas/detailsbyId": {
       "post": {
         "tags": [
-          "Establishment"
+          "VillagesAreas"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EstablishmentDetailsRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EstablishmentDetailsRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/EstablishmentDetailsRequest"
-              }
+        "parameters": [
+          {
+            "name": "villageAreaId",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EstablishmentResponseIApiResponse"
+                  "$ref": "#/components/schemas/VillageAreaResponseIApiResponse"
                 }
               }
             }
@@ -168,37 +158,27 @@
         }
       }
     },
-    "/labourms/v1/services/adapter/establishment/details": {
+    "/labourms/v1/services/adapter/villagesareas/villagesareasdetailsbycityid": {
       "post": {
         "tags": [
-          "Establishment"
+          "VillagesAreas"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EstablishmentRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EstablishmentRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/EstablishmentRequest"
-              }
+        "parameters": [
+          {
+            "name": "cityId",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EstablishmentDetailsResponseIApiResponse"
+                  "$ref": "#/components/schemas/VillageAreaResponseIApiResponse"
                 }
               }
             }
@@ -287,289 +267,35 @@
         },
         "additionalProperties": false
       },
-      "EstablishmentDetailsRequest": {
+      "VillageAreaResponse": {
         "type": "object",
         "properties": {
-          "establishmentId": {
+          "village_Id": {
             "type": "integer",
             "format": "int64",
             "nullable": true
           },
-          "establishmentName": {
+          "village_Name": {
             "type": "string",
             "nullable": true
           },
-          "contactPerson": {
+          "village_Code": {
             "type": "string",
             "nullable": true
           },
-          "mobileNumber": {
+          "city_Id": {
             "type": "integer",
             "format": "int64",
             "nullable": true
           },
-          "emailId": {
-            "type": "string",
-            "nullable": true
-          },
-          "doorNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "street": {
-            "type": "string",
-            "nullable": true
-          },
-          "stateId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "stateCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "districtId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "districtCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "cityId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "cityCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "villageOrArea": {
-            "type": "string",
-            "nullable": true
-          },
-          "pincode": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "isPlanApprovalId": {
-            "type": "string",
-            "nullable": true
-          },
-          "planApprovalId": {
-            "type": "string",
-            "nullable": true
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "workNatureId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "commencementDate": {
-            "type": "string",
-            "format": "date",
-            "nullable": true
-          },
-          "completionDate": {
-            "type": "string",
-            "format": "date",
-            "nullable": true
-          },
-          "constructionEstimatedCost": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "constructionArea": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "builtUpArea": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "basicEstimatedCost": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "noOfMaleWorkers": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "noOfFemaleWorkers": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "isAcceptedTermsAndConditions": {
+          "city_Name": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "EstablishmentDetailsResponse": {
-        "type": "object",
-        "properties": {
-          "establishmentId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "establishmentName": {
-            "type": "string",
-            "nullable": true
-          },
-          "contactPerson": {
-            "type": "string",
-            "nullable": true
-          },
-          "mobileNumber": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "emailId": {
-            "type": "string",
-            "nullable": true
-          },
-          "doorNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "street": {
-            "type": "string",
-            "nullable": true
-          },
-          "stateId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "stateCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "stateName": {
-            "type": "string",
-            "nullable": true
-          },
-          "districtId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "districtCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "districtName": {
-            "type": "string",
-            "nullable": true
-          },
-          "cityId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "cityCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "cityName": {
-            "type": "string",
-            "nullable": true
-          },
-          "villageOrArea": {
-            "type": "string",
-            "nullable": true
-          },
-          "pincode": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "isPlanApprovalId": {
-            "type": "string",
-            "nullable": true
-          },
-          "planApprovalId": {
-            "type": "string",
-            "nullable": true
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "categoryName": {
-            "type": "string",
-            "nullable": true
-          },
-          "workNatureId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "workNatureName": {
-            "type": "string",
-            "nullable": true
-          },
-          "commencementDate": {
-            "type": "string",
-            "nullable": true
-          },
-          "completionDate": {
-            "type": "string",
-            "nullable": true
-          },
-          "constructionEstimatedCost": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "constructionArea": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "builtUpArea": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "basicEstimatedCost": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "noOfMaleWorkers": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "noOfFemaleWorkers": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "EstablishmentDetailsResponseIApiResponse": {
+      "VillageAreaResponseIApiResponse": {
         "type": "object",
         "properties": {
           "correlationId": {
@@ -578,50 +304,7 @@
             "readOnly": true
           },
           "data": {
-            "$ref": "#/components/schemas/EstablishmentDetailsResponse"
-          },
-          "error": {
-            "$ref": "#/components/schemas/Error"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EstablishmentRequest": {
-        "type": "object",
-        "properties": {
-          "establishmentId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "EstablishmentResponse": {
-        "type": "object",
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "EstablishmentResponseIApiResponse": {
-        "type": "object",
-        "properties": {
-          "correlationId": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/EstablishmentResponse"
+            "$ref": "#/components/schemas/VillageAreaResponse"
           },
           "error": {
             "$ref": "#/components/schemas/Error"

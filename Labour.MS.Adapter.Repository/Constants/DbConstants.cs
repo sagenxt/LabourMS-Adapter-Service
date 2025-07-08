@@ -25,6 +25,8 @@ namespace Labour.MS.Adapter.Repository.Constants
         public const string P_DISTRICT_CODE = "District_Code";
         public const string P_CITY_ID = "City_Id";
         public const string P_CITY_CODE = "City_Code";
+        public const string P_VILLAGE_AREA_ID = "Village_Area_Id";
+        public const string P_VILLAGE_AREA_Code = "Village_Area_Code";
         public const string P_VILLAGE_AREA = "Village_Area";
         public const string P_PINCODE = "Pincode";
         public const string P_IS_PLAN_APPROVAL_ID = "Is_Plan_Approval_Id";
@@ -50,6 +52,11 @@ namespace Labour.MS.Adapter.Repository.Constants
         public const string USP_PERSIST_ESTABLISHMENT_DETAILS = "usp_Persist_Establishment_Details";
         public const string USP_GET_ALL_ESTABLISHMENT_DETAILS = "usp_Get_All_Establishment_Details";
         public const string USP_GET_ESTABLISHMENT_DETAILS = "usp_Get_Establishment_Details";
+
+        public const string Get_Cities = "Get_Cities";
+        public const string Get_Districts = "Get_Districts";
+        public const string Get_Villages_Areas = "Get_Villages_Areas";
+
 
         #endregion
 
