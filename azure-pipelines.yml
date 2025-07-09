@@ -12,12 +12,25 @@ variables:
 jobs:
 - job: Build
   steps:
-  - task: NuGetToolInstaller@1
 
+  - powershell: |
+      Get-ChildItem -Path '$(Build.SourcesDirectory)/CustomPackages' -Filter *.mplig |
+      Rename-Item -NewName { $_.Name -replace '\.mplig$','.nupkg' }
+    displayName: 'Convert to NuGet Packages'
+
+  - powershell: |
+      nuget sources add -Name "LocalPackages" -Source "$(Build.SourcesDirectory)/CustomPackages"
+    displayName: 'Add Local NuGet Feed'
+    env:
+      NUGET_EXE: $(Agent.ToolsDirectory)\nuget.exe  # Ensures nuget.exe is available
+      
   - task: NuGetCommand@2
     inputs:
+      command: 'restore'
       restoreSolution: '$(solution)'
-      # Add your private feed configuration here
+      feedsToUse: 'select'
+      includeNuGetOrg: true
+      vstsFeed: 'LocalPackages'
 
   - task: VSBuild@1
     inputs:
