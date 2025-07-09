@@ -1,9 +1,5 @@
 using Core.Middleware;
 using Labour.MS.Adapter.Api.Extensions;
-using Labour.MS.Adapter.Repository.Implement.Masters;
-using Labour.MS.Adapter.Repository.Interface.Masters;
-using Labour.MS.Adapter.Service.Implement.Masters;
-using Labour.MS.Adapter.Service.Interface.Masters;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,47 +12,7 @@ builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-   
-
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Villages-Areas API", Version = "v1" });
-
-    c.DocInclusionPredicate((docName, apiDesc) =>
-    {
-        // Only include MyController
-        var controllerName = apiDesc.ActionDescriptor.RouteValues["controller"];
-        return controllerName == "VillagesAreas";
-    });
-
-    //c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cities API", Version = "v1" });
-
-    //c.DocInclusionPredicate((docName, apiDesc) =>
-    //{
-    //    // Only include MyController
-    //    var controllerName = apiDesc.ActionDescriptor.RouteValues["controller"];
-    //    return controllerName == "Cities";
-    //});
-
-    //c.SwaggerDoc("v1", new OpenApiInfo { Title = "Districts API", Version = "v1" });
-
-    //c.DocInclusionPredicate((docName, apiDesc) =>
-    //{
-    //    // Only include MyController
-    //    var controllerName = apiDesc.ActionDescriptor.RouteValues["controller"];
-    //    return controllerName == "Districts";
-    //});
-});
-builder.Services.AddScoped<IVillageAreaService, VillageAreaService>();
-builder.Services.AddScoped<IVillageAreaRepository, VillageAreaRepository>();
-
-builder.Services.AddScoped<ICitiesService, CitiesService>();
-builder.Services.AddScoped<ICitiesRepository, CitiesRepository>();
-
-builder.Services.AddScoped<IDistrictsService, DistrictsService>();
-builder.Services.AddScoped<IDistrictsRepository, DistrictsRepository>();
-
-
+builder.Services.AddSwaggerGen();
 
 // Add AutoMapper to build services
 //builder.Services.AddAutoMapper(typeof(UserMapper));
