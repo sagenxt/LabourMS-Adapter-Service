@@ -18,7 +18,7 @@ namespace Labour.MS.Adapter.Models.DTOs.Request.Establishment
         public string? DistrictCode { get; set; }
         public int? CityId { get; set; }
         public string? CityCode { get; set; }
-        public string? VillageOrArea { get; set; }
+        public int? VillageOrAreaId { get; set; }
         public int? Pincode { get; set; }
         public string? IsPlanApprovalId { get; set; }
         public string? PlanApprovalId { get; set; }

@@ -27,7 +27,7 @@ namespace Labour.MS.Adapter.Repository.Constants
         public const string P_CITY_CODE = "City_Code";
         public const string P_VILLAGE_AREA_ID = "Village_Area_Id";
         public const string P_VILLAGE_AREA_Code = "Village_Area_Code";
-        public const string P_VILLAGE_AREA = "Village_Area";
+        public const string P_VILLAGE_AREA_NAME = "Village_Area_NAME";
         public const string P_PINCODE = "Pincode";
         public const string P_IS_PLAN_APPROVAL_ID = "Is_Plan_Approval_Id";
         public const string P_PLAN_APPROVAL_ID = "Plan_Approval_Id";

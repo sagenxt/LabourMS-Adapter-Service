@@ -110,7 +110,7 @@ namespace Labour.MS.Adapter.Repository.Implement.Establishment
                             new ParameterConfig { ParameterName = DbConstants.P_DISTRICT_CODE, ParameterValue=request.DistrictCode, DataType=DbType.String, Direction=ParameterDirection.Input },
                             new ParameterConfig { ParameterName = DbConstants.P_CITY_ID, ParameterValue=request.CityId, DataType=DbType.Int32, Direction=ParameterDirection.Input },
                             new ParameterConfig { ParameterName = DbConstants.P_CITY_CODE, ParameterValue=request.CityCode, DataType=DbType.String, Direction=ParameterDirection.Input },
-                            new ParameterConfig { ParameterName = DbConstants.P_VILLAGE_AREA, ParameterValue=request.VillageOrArea, DataType=DbType.String, Direction=ParameterDirection.Input },
+                            new ParameterConfig { ParameterName = DbConstants.P_VILLAGE_AREA_ID, ParameterValue=request.VillageOrAreaId, DataType=DbType.Int32, Direction=ParameterDirection.Input },
                             new ParameterConfig { ParameterName = DbConstants.P_PINCODE, ParameterValue=request.Pincode, DataType=DbType.Int32, Direction=ParameterDirection.Input },
 
                             new ParameterConfig { ParameterName = DbConstants.P_IS_PLAN_APPROVAL_ID, ParameterValue=request.IsPlanApprovalId, DataType=DbType.String, Direction=ParameterDirection.Input },
