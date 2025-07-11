@@ -142,6 +142,7 @@ jobs:
           env:
             vmPassword: $(vmPassword)
 
+
             
         # Step 4: Verify deployment
         - task: PowerShell@2
