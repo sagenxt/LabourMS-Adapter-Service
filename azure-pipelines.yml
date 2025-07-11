@@ -69,9 +69,49 @@ jobs:
         - download: current
           artifact: drop
           
+        # Step 1: Start the website if it exists but is stopped
+        - powershell: |
+            Import-Module WebAdministration
+            $siteName = "MyAPI"
+            
+            # Check if website exists
+            if (Get-Website -Name $siteName) {
+                # Start website if stopped
+                $state = (Get-WebsiteState -Name $siteName).Value
+                if ($state -eq "Stopped") {
+                    Start-Website -Name $siteName
+                    Write-Host "Started website: $siteName"
+                }
+                else {
+                    Write-Host "Website $siteName is already running"
+                }
+            }
+            else {
+                Write-Error "Website $siteName does not exist"
+            }
+          displayName: 'Ensure Website is Running'
+
+        # Step 2: Deploy application
         - task: IISWebAppDeploymentOnMachineGroup@0
           inputs:
             WebSiteName: 'MyAPI'
             Package: '$(Pipeline.Workspace)/drop/WebApp.zip'
             RemoveAdditionalFilesFlag: true
             TakeAppOfflineFlag: true
+            ExcludeFilesFromAppData: false
+            SetParametersFile: ''  # Add if you have custom parameters
+
+        # Step 3: Verify deployment
+        - powershell: |
+            $siteName = "MyAPI"
+            $state = (Get-WebsiteState -Name $siteName).Value
+            $appPool = (Get-Website -Name $siteName).applicationPool
+            $appPoolState = (Get-WebAppPoolState -Name $appPool).Value
+            
+            Write-Host "Website state: $state"
+            Write-Host "AppPool state: $appPoolState"
+            
+            if ($state -ne "Started") {
+                Write-Error "Website is not running after deployment"
+            }
+          displayName: 'Verify Deployment Status'
