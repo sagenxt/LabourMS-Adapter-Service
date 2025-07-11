@@ -63,8 +63,8 @@ jobs:
   environment: Production-Windows
   dependsOn: Build
   variables:
-    vmName: 'your-vm-name'
-    vmAdmin: 'your-admin-username'
+    vmName: 'Employee-connec'
+    vmAdmin: 'DeployUser'
     siteName: 'MyAPI'
     appPoolName: 'MyAPIAppPool'
     physicalPath: 'C:\inetpub\MyAPI'
@@ -81,7 +81,16 @@ jobs:
           inputs:
             targetType: 'inline'
             script: |
-              $secPassword = ConvertTo-SecureString "$(vmPassword)" -AsPlainText -Force
+              # Read secret from environment variable
+              $password = "$(vmPassword)"
+              
+              # Validate password is not empty
+              if ([string]::IsNullOrEmpty($password)) {
+                  Write-Host "##vso[task.logissue type=error]vmPassword is empty!"
+                  exit 1
+              }
+              
+              $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
               $credential = New-Object System.Management.Automation.PSCredential("$(vmAdmin)", $secPassword)
               
               Invoke-Command -ComputerName "$(vmName)" -Credential $credential -ScriptBlock {
@@ -90,9 +99,11 @@ jobs:
                   $output = "$env:TEMP\WebDeploy.msi"
                   
                   if (-not (Test-Path "C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe")) {
-                      Invoke-WebRequest -Uri $url -OutFile $output
+                      Write-Host "Downloading Web Deploy..."
+                      [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+                      Invoke-WebRequest -Uri $url -OutFile $output -UseBasicParsing
                       
-                      # Install silently
+                      Write-Host "Installing Web Deploy..."
                       Start-Process msiexec -ArgumentList "/i $output", "/quiet", "/norestart" -Wait
                       
                       # Configure service
@@ -102,72 +113,12 @@ jobs:
                       
                       # Add firewall rule
                       New-NetFirewallRule -DisplayName "Web Deploy" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 8172
+                      Write-Host "Web Deploy installed and configured"
+                  }
+                  else {
+                      Write-Host "Web Deploy already installed"
                   }
               }
-            failOnStderr: true
-          env:
-            vmPassword: $(vmPassword)  # Azure DevOps secret variable
-            
-        # Step 2: Configure IIS (website and app pool)
-        - task: PowerShell@2
-          displayName: 'Configure IIS Website'
-          inputs:
-            targetType: 'inline'
-            script: |
-              $secPassword = ConvertTo-SecureString "$(vmPassword)" -AsPlainText -Force
-              $credential = New-Object System.Management.Automation.PSCredential("$(vmAdmin)", $secPassword)
-              
-              Invoke-Command -ComputerName "$(vmName)" -Credential $credential -ScriptBlock {
-                  param($siteName, $appPoolName, $physicalPath)
-                  
-                  Import-Module WebAdministration
-                  
-                  # Create application pool
-                  if (-not (Test-Path "IIS:\AppPools\$appPoolName")) {
-                      New-WebAppPool -Name $appPoolName
-                      Set-ItemProperty "IIS:\AppPools\$appPoolName" -Name "managedRuntimeVersion" -Value ""
-                      Start-WebAppPool -Name $appPoolName
-                  }
-                  
-                  # Create website
-                  if (-not (Test-Path "IIS:\Sites\$siteName")) {
-                      New-Website -Name $siteName `
-                                  -Port 80 `
-                                  -PhysicalPath $physicalPath `
-                                  -ApplicationPool $appPoolName
-                  }
-                  
-                  # Ensure physical path exists
-                  if (-not (Test-Path $physicalPath)) {
-                      New-Item -ItemType Directory -Path $physicalPath -Force
-                  }
-                  
-                  # Start website
-                  Start-Website -Name $siteName
-                  
-                  # Grant permissions
-                  icacls $physicalPath /grant "IIS AppPool\$appPoolName:(OI)(CI)(RX)"
-                  
-              } -ArgumentList $siteName, $appPoolName, $physicalPath
-            failOnStderr: true
-          env:
-            vmPassword: $(vmPassword)
-            
-        # Step 3: Deploy application
-        - task: PowerShell@2
-          displayName: 'Deploy Application'
-          inputs:
-            targetType: 'inline'
-            script: |
-              $packagePath = "$(Pipeline.Workspace)/drop/WebApp.zip"
-              $msdeploy = "C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe"
-              
-              & $msdeploy -verb:sync `
-                          -source:package="$packagePath" `
-                          -dest:auto,computerName="https://$(vmName):8172/msdeploy.axd",UserName='$(vmAdmin)',Password='$(vmPassword)',AuthType='Basic' `
-                          -setParam:name='IIS Web Application Name',value='$(siteName)' `
-                          -enableRule:AppOffline `
-                          -allowUntrusted
             failOnStderr: true
           env:
             vmPassword: $(vmPassword)
@@ -185,4 +136,3 @@ jobs:
               }
               else {
                   Write-Host "Deployment verified successfully!"
-              }
