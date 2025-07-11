@@ -8,44 +8,45 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  # Add custom packages path as global environment variable
+  NUGET_PACKAGES: '$(Build.SourcesDirectory)/CustomPackages'
 
 jobs:
 - job: Build
   steps:
+  # STEP 1: Add local folder as NuGet source
+  - powershell: |
+      # Create temporary NuGet config with local source
+      $configContent = @"
+      <?xml version="1.0" encoding="utf-8"?>
+      <configuration>
+        <packageSources>
+          <add key="CustomPackages" value="$(Build.SourcesDirectory)/CustomPackages" />
+          <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+        </packageSources>
+      </configuration>
+      "@
+      Set-Content -Path "$(Build.SourcesDirectory)/nuget.temp.config" -Value $configContent
+    displayName: 'Create temporary NuGet config'
 
-  # - powershell: |
-  #     Get-ChildItem -Path '$(Build.SourcesDirectory)/CustomPackages' -Filter *.* |
-  #     Rename-Item -NewName { $_.Name -replace '\.mplig$','.nupkg' }
-  #   displayName: 'Convert to NuGet Packages'
-
+  # STEP 2: Restore with custom config
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
       restoreSolution: '$(solution)'
-      feedsToUse: 'select'
-      includeNuGetOrg: true
-      # Remove vstsFeed parameter completely
-      # Add local source directly
-      externalFeedCredentials: ''  # Keep empty
-      packagesDirectory: '$(Build.SourcesDirectory)/CustomPackages'
-    env:
-      NUGET_PACKAGES: '$(Build.SourcesDirectory)/CustomPackages'
+      feedsToUse: 'config'
+      nugetConfigPath: '$(Build.SourcesDirectory)/nuget.temp.config'  # Use custom config
+    displayName: 'NuGet restore with custom packages'
 
-  # Additional step to find local packages
-  - powershell: |
-      Write-Host "##vso[task.setvariable variable=NUGET_PACKAGES]$(Build.SourcesDirectory)/CustomPackages"
-      nuget locals all -list
-      nuget install Core.ApiResponse -Source '$(Build.SourcesDirectory)/CustomPackages' -OutputDirectory '$(Build.SourcesDirectory)/packages' -NoCache
-      nuget install Core.MSSQL.DataAccess -Source '$(Build.SourcesDirectory)/CustomPackages' -OutputDirectory '$(Build.SourcesDirectory)/packages' -NoCache
-      nuget install Core.Middleware -Source '$(Build.SourcesDirectory)/CustomPackages' -OutputDirectory '$(Build.SourcesDirectory)/packages' -NoCache
-    displayName: 'Install Local Packages to Cache'
-
+  # STEP 3: Build solution
   - task: VSBuild@1
     inputs:
       solution: '$(solution)'
       msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip"'
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
+
+  # ... rest of your tasks (test, publish artifacts)
 
   - task: VSTest@2
     inputs:
