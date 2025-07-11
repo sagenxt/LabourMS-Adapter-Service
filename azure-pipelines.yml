@@ -14,7 +14,7 @@ jobs:
   steps:
 
   - powershell: |
-      Get-ChildItem -Path '$(Build.SourcesDirectory)/CustomPackages' -Filter *.mplig |
+      Get-ChildItem -Path '$(Build.SourcesDirectory)/CustomPackages' -Filter *.* |
       Rename-Item -NewName { $_.Name -replace '\.mplig$','.nupkg' }
     displayName: 'Convert to NuGet Packages'
 
