@@ -63,8 +63,8 @@ jobs:
   environment: Production-Windows
   dependsOn: Build
   variables:
-    vmName: 'Employee-connec'  # Your VM name from error
-    vmAdmin: 'your-admin-username'
+    vmName: '20.219.114.75'  # Your VM name from error
+    vmAdmin: 'DeployUser'
     siteName: 'MyAPI'
     appPoolName: 'MyAPIAppPool'
     physicalPath: 'C:\inetpub\MyAPI'
