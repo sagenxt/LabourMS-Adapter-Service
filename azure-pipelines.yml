@@ -62,6 +62,12 @@ jobs:
   displayName: 'Deploy to Production'
   environment: Production-Windows
   dependsOn: Build
+  variables:
+    vmName: 'your-vm-name'
+    vmAdmin: 'your-admin-username'
+    siteName: 'MyAPI'
+    appPoolName: 'MyAPIAppPool'
+    physicalPath: 'C:\inetpub\MyAPI'
   strategy:
     runOnce:
       deploy:
@@ -69,15 +75,114 @@ jobs:
         - download: current
           artifact: drop
           
-        - task: IISWebAppDeploymentOnMachineGroup@0
+        # Step 1: Install and configure Web Deploy
+        - task: PowerShell@2
+          displayName: 'Install Web Deploy'
           inputs:
-            WebSiteName: 'MyAPI'
-            Package: '$(Pipeline.Workspace)/drop/WebApp.zip'
-            RemoveAdditionalFilesFlag: true
-            TakeAppOfflineFlag: true
-            # ADD THESE PARAMETERS TO TARGET YOUR VM:
-            ComputerName: 'your-vm-name'  # Replace with actual VM name
-            UserName: 'your-username'     # VM admin username
-            Password: 'your-password'     # VM admin password
-            WebDeployServiceUrl: 'https://your-vm-ip:8172/msdeploy.axd'  # VM IP/DNS
-            AuthType: 'Basic'
+            targetType: 'inline'
+            script: |
+              $secPassword = ConvertTo-SecureString "$(vmPassword)" -AsPlainText -Force
+              $credential = New-Object System.Management.Automation.PSCredential("$(vmAdmin)", $secPassword)
+              
+              Invoke-Command -ComputerName "$(vmName)" -Credential $credential -ScriptBlock {
+                  # Download Web Deploy
+                  $url = "https://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi"
+                  $output = "$env:TEMP\WebDeploy.msi"
+                  
+                  if (-not (Test-Path "C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe")) {
+                      Invoke-WebRequest -Uri $url -OutFile $output
+                      
+                      # Install silently
+                      Start-Process msiexec -ArgumentList "/i $output", "/quiet", "/norestart" -Wait
+                      
+                      # Configure service
+                      Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\WebManagement\Server" -Name "EnableRemoteManagement" -Value 1 -Force
+                      Set-Service WMSVC -StartupType Automatic
+                      Start-Service WMSVC
+                      
+                      # Add firewall rule
+                      New-NetFirewallRule -DisplayName "Web Deploy" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 8172
+                  }
+              }
+            failOnStderr: true
+          env:
+            vmPassword: $(vmPassword)  # Azure DevOps secret variable
+            
+        # Step 2: Configure IIS (website and app pool)
+        - task: PowerShell@2
+          displayName: 'Configure IIS Website'
+          inputs:
+            targetType: 'inline'
+            script: |
+              $secPassword = ConvertTo-SecureString "$(vmPassword)" -AsPlainText -Force
+              $credential = New-Object System.Management.Automation.PSCredential("$(vmAdmin)", $secPassword)
+              
+              Invoke-Command -ComputerName "$(vmName)" -Credential $credential -ScriptBlock {
+                  param($siteName, $appPoolName, $physicalPath)
+                  
+                  Import-Module WebAdministration
+                  
+                  # Create application pool
+                  if (-not (Test-Path "IIS:\AppPools\$appPoolName")) {
+                      New-WebAppPool -Name $appPoolName
+                      Set-ItemProperty "IIS:\AppPools\$appPoolName" -Name "managedRuntimeVersion" -Value ""
+                      Start-WebAppPool -Name $appPoolName
+                  }
+                  
+                  # Create website
+                  if (-not (Test-Path "IIS:\Sites\$siteName")) {
+                      New-Website -Name $siteName `
+                                  -Port 80 `
+                                  -PhysicalPath $physicalPath `
+                                  -ApplicationPool $appPoolName
+                  }
+                  
+                  # Ensure physical path exists
+                  if (-not (Test-Path $physicalPath)) {
+                      New-Item -ItemType Directory -Path $physicalPath -Force
+                  }
+                  
+                  # Start website
+                  Start-Website -Name $siteName
+                  
+                  # Grant permissions
+                  icacls $physicalPath /grant "IIS AppPool\$appPoolName:(OI)(CI)(RX)"
+                  
+              } -ArgumentList $siteName, $appPoolName, $physicalPath
+            failOnStderr: true
+          env:
+            vmPassword: $(vmPassword)
+            
+        # Step 3: Deploy application
+        - task: PowerShell@2
+          displayName: 'Deploy Application'
+          inputs:
+            targetType: 'inline'
+            script: |
+              $packagePath = "$(Pipeline.Workspace)/drop/WebApp.zip"
+              $msdeploy = "C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe"
+              
+              & $msdeploy -verb:sync `
+                          -source:package="$packagePath" `
+                          -dest:auto,computerName="https://$(vmName):8172/msdeploy.axd",UserName='$(vmAdmin)',Password='$(vmPassword)',AuthType='Basic' `
+                          -setParam:name='IIS Web Application Name',value='$(siteName)' `
+                          -enableRule:AppOffline `
+                          -allowUntrusted
+            failOnStderr: true
+          env:
+            vmPassword: $(vmPassword)
+            
+        # Step 4: Verify deployment
+        - task: PowerShell@2
+          displayName: 'Verify Deployment'
+          inputs:
+            targetType: 'inline'
+            script: |
+              $response = Invoke-WebRequest -Uri "http://$(vmName)" -UseBasicParsing -ErrorAction SilentlyContinue
+              if ($response.StatusCode -ne 200) {
+                  Write-Host "##vso[task.logissue type=error]Application health check failed"
+                  exit 1
+              }
+              else {
+                  Write-Host "Deployment verified successfully!"
+              }
