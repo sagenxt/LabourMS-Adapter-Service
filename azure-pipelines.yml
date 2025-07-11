@@ -27,13 +27,13 @@ jobs:
       # Remove vstsFeed parameter completely
       # Add local source directly
       externalFeedCredentials: ''  # Keep empty
-      packagesDirectory: '$(Build.SourcesDirectory)/packages'
+      packagesDirectory: '$(Build.SourcesDirectory)/CustomPackages'
     env:
-      NUGET_PACKAGES: '$(Build.SourcesDirectory)/packages'
+      NUGET_PACKAGES: '$(Build.SourcesDirectory)/CustomPackages'
 
   # Additional step to find local packages
   - powershell: |
-      Write-Host "##vso[task.setvariable variable=NUGET_PACKAGES]$(Build.SourcesDirectory)/packages"
+      Write-Host "##vso[task.setvariable variable=NUGET_PACKAGES]$(Build.SourcesDirectory)/CustomPackages"
       nuget locals all -list
       nuget install Core.ApiResponse -Source '$(Build.SourcesDirectory)/CustomPackages' -OutputDirectory '$(Build.SourcesDirectory)/packages' -NoCache
       nuget install Core.MSSQL.DataAccess -Source '$(Build.SourcesDirectory)/CustomPackages' -OutputDirectory '$(Build.SourcesDirectory)/packages' -NoCache
