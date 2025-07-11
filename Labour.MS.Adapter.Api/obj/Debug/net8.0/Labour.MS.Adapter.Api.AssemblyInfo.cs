@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Labour.MS.Adapter.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c044e07ad7b93817b8f20f9cf14e5f7b5e2b437c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffa18bea54d0b5700fe574e4a8a121cf71dad690")]
 [assembly: System.Reflection.AssemblyProductAttribute("Labour.MS.Adapter.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Labour.MS.Adapter.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
