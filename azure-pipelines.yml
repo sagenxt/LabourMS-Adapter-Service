@@ -63,8 +63,8 @@ jobs:
   environment: Production-Windows
   dependsOn: Build
   variables:
-    vmName: 'Employee-connec'
-    vmAdmin: 'DeployUser'
+    vmName: 'Employee-connec'  # Your VM name from error
+    vmAdmin: 'your-admin-username'
     siteName: 'MyAPI'
     appPoolName: 'MyAPIAppPool'
     physicalPath: 'C:\inetpub\MyAPI'
@@ -75,25 +75,44 @@ jobs:
         - download: current
           artifact: drop
           
-        # Step 1: Install and configure Web Deploy
+        # Step 1: Configure WinRM Trust
+        - task: PowerShell@2
+          displayName: 'Configure WinRM Trust'
+          inputs:
+            targetType: 'inline'
+            script: |
+              $password = "$(vmPassword)"
+              $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
+              $credential = New-Object System.Management.Automation.PSCredential("$(vmAdmin)", $secPassword)
+              
+              # Add target VM to TrustedHosts
+              Set-Item WSMan:\localhost\Client\TrustedHosts -Value "$(vmName)" -Concatenate -Force
+              
+              # Test connection
+              $sessionOptions = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+              $session = New-PSSession -ComputerName "$(vmName)" -Credential $credential -SessionOption $sessionOptions -ErrorAction Stop
+              Invoke-Command -Session $session -ScriptBlock { hostname } -ErrorAction Stop
+              Remove-PSSession $session
+              
+              Write-Host "Successfully configured WinRM trust to $(vmName)"
+            failOnStderr: true
+          env:
+            vmPassword: $(vmPassword)
+            
+        # Step 2: Install Web Deploy (updated with WinRM session options)
         - task: PowerShell@2
           displayName: 'Install Web Deploy'
           inputs:
             targetType: 'inline'
             script: |
-              # Read secret from environment variable
               $password = "$(vmPassword)"
-              
-              # Validate password is not empty
-              if ([string]::IsNullOrEmpty($password)) {
-                  Write-Host "##vso[task.logissue type=error]vmPassword is empty!"
-                  exit 1
-              }
-              
               $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
               $credential = New-Object System.Management.Automation.PSCredential("$(vmAdmin)", $secPassword)
               
-              Invoke-Command -ComputerName "$(vmName)" -Credential $credential -ScriptBlock {
+              # Create session options to bypass trust checks
+              $sessionOptions = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+              
+              Invoke-Command -ComputerName "$(vmName)" -Credential $credential -SessionOption $sessionOptions -ScriptBlock {
                   # Download Web Deploy
                   $url = "https://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi"
                   $output = "$env:TEMP\WebDeploy.msi"
@@ -104,7 +123,7 @@ jobs:
                       Invoke-WebRequest -Uri $url -OutFile $output -UseBasicParsing
                       
                       Write-Host "Installing Web Deploy..."
-                      Start-Process msiexec -ArgumentList "/i $output", "/quiet", "/norestart" -Wait
+                      Start-Process msiexec.exe -ArgumentList "/i $output", "/quiet", "/norestart" -Wait
                       
                       # Configure service
                       Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\WebManagement\Server" -Name "EnableRemoteManagement" -Value 1 -Force
@@ -122,6 +141,7 @@ jobs:
             failOnStderr: true
           env:
             vmPassword: $(vmPassword)
+
             
         # Step 4: Verify deployment
         - task: PowerShell@2
