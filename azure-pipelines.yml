@@ -46,7 +46,11 @@ jobs:
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
 
-  # ... rest of your tasks (test, publish artifacts)
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(build.artifactStagingDirectory)\WebApp.zip'
+      artifactName: 'webAppPackage'
+      publishLocation: 'container'
 
   - task: VSTest@2
     inputs:
